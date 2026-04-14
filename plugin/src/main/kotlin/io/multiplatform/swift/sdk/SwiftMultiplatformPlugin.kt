@@ -60,7 +60,7 @@ class SwiftMultiplatformPlugin : Plugin<Project> {
         val android = project.extensions.getByType(LibraryExtension::class.java)
         val cfg = ext.android
         android.compileSdk = cfg.compileSdk.get()
-        android.namespace = cfg.namespace.getOrElse("io.multiplatform.swift.sdk.default")
+        android.namespace = cfg.namespace.getOrElse("io.multiplatform.swift.sdk.generated")
         android.defaultConfig.minSdk = cfg.minSdk.get()
         android.compileOptions.sourceCompatibility = org.gradle.api.JavaVersion.VERSION_17
         android.compileOptions.targetCompatibility = org.gradle.api.JavaVersion.VERSION_17
