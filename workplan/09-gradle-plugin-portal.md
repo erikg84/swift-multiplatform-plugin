@@ -23,7 +23,7 @@
 ./gradlew :plugin:publishPlugins
 
 # Verify at:
-# https://plugins.gradle.org/plugin/io.github.erikg84.swift-multiplatform
+# https://plugins.gradle.org/plugin/io.multiplatform.swift.sdk
 ```
 
 ## CI Workflow
@@ -41,6 +41,6 @@
 ```kotlin
 // No repository configuration needed — just this:
 plugins {
-    id("io.github.erikg84.swift-multiplatform") version "1.0.0"
+    id("io.multiplatform.swift.sdk") version "1.0.0"
 }
 ```

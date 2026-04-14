@@ -7,16 +7,16 @@ Set up the generalized plugin project with proper package naming, Gradle Plugin 
 
 | Prototype | Generalized |
 |-----------|------------|
-| `com.dallaslabs.gradle.swift` | `io.github.erikg84.swiftmultiplatform` |
-| Plugin ID: `com.dallaslabs.swift-multiplatform` | Plugin ID: `io.github.erikg84.swift-multiplatform` |
-| Group: `com.dallaslabs` | Group: `io.github.erikg84` |
+| `com.dallaslabs.gradle.swift` | `io.multiplatform.swift.sdk` |
+| Plugin ID: `com.dallaslabs.swift-multiplatform` | Plugin ID: `io.multiplatform.swift.sdk` |
+| Group: `com.dallaslabs` | Group: `io.multiplatform` |
 
 ## Directory Structure
 
 ```
 swift-multiplatform-plugin/
 ├── plugin/
-│   ├── src/main/kotlin/io/github/erikg84/swiftmultiplatform/
+│   ├── src/main/kotlin/io/multiplatform/swift/sdk/
 │   │   ├── SwiftMultiplatformPlugin.kt
 │   │   ├── SwiftMultiplatformExtension.kt
 │   │   ├── config/
@@ -40,7 +40,7 @@ swift-multiplatform-plugin/
 │   │   └── util/
 │   │       ├── SwiftToolchain.kt
 │   │       └── PackageSwiftGenerator.kt
-│   ├── src/test/kotlin/io/github/erikg84/swiftmultiplatform/
+│   ├── src/test/kotlin/io/multiplatform/swift/sdk/
 │   │   ├── SwiftMultiplatformPluginTest.kt
 │   │   ├── PackageSwiftGeneratorTest.kt
 │   │   ├── SwiftToolchainTest.kt
@@ -76,7 +76,7 @@ plugins {
     id("com.gradle.plugin-publish") version "1.3.0"  // Gradle Plugin Portal
 }
 
-group = "io.github.erikg84"
+group = "io.multiplatform"
 version = providers.gradleProperty("VERSION").getOrElse("1.0.0-SNAPSHOT")
 
 repositories {
@@ -95,8 +95,8 @@ gradlePlugin {
 
     plugins {
         create("swiftMultiplatform") {
-            id = "io.github.erikg84.swift-multiplatform"
-            implementationClass = "io.github.erikg84.swiftmultiplatform.SwiftMultiplatformPlugin"
+            id = "io.multiplatform.swift.sdk"
+            implementationClass = "io.multiplatform.swift.sdk.SwiftMultiplatformPlugin"
             displayName = "Swift Multiplatform"
             description = "Build Android AAR + iOS XCFramework from a single Swift source tree"
             tags = listOf("swift", "android", "ios", "xcframework", "cross-platform", "multiplatform")
@@ -115,8 +115,8 @@ tasks.test { useJUnitPlatform() }
 
 ## Key Differences from Prototype
 
-1. Package: `io.github.erikg84.swiftmultiplatform` (not `com.dallaslabs`)
-2. Plugin ID: `io.github.erikg84.swift-multiplatform`
+1. Package: `io.multiplatform.swift.sdk` (not `com.dallaslabs`)
+2. Plugin ID: `io.multiplatform.swift.sdk`
 3. `com.gradle.plugin-publish` plugin for Gradle Plugin Portal
 4. Tags for discoverability
 5. `config/` subdirectory for config classes

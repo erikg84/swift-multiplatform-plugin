@@ -18,7 +18,7 @@ This plugin eliminates all of that.
 
 ```kotlin
 plugins {
-    id("io.github.erikg84.swift-multiplatform") version "1.0.0"
+    id("io.multiplatform.swift.sdk") version "1.0.0"
 }
 
 swiftMultiplatform {
@@ -94,7 +94,7 @@ The prototype (`swift-multiplatform-gradle-plugin`) was built for a specific pro
 | No error messages for misconfiguration | Actionable validation with clear error messages |
 | Only tested against one SDK | Example project + integration test suite |
 | Published to GitHub Packages (auth required) | Published to Gradle Plugin Portal (public) |
-| Plugin ID tied to `com.dallaslabs` | Generic `io.github.erikg84.swift-multiplatform` |
+| Plugin ID tied to `com.dallaslabs` | Generic `io.multiplatform.swift.sdk` |
 
 ## Architecture
 
@@ -102,7 +102,7 @@ The prototype (`swift-multiplatform-gradle-plugin`) was built for a specific pro
 swift-multiplatform-plugin/
 ├── plugin/                           # The plugin (composite build)
 │   ├── src/main/kotlin/
-│   │   └── io/github/erikg84/swiftmultiplatform/
+│   │   └── io/multiplatform/swift/sdk/
 │   │       ├── SwiftMultiplatformPlugin.kt
 │   │       ├── SwiftMultiplatformExtension.kt
 │   │       ├── config/
@@ -149,7 +149,7 @@ swift-multiplatform-plugin/
 
 ### Plugin ID
 ```
-io.github.erikg84.swift-multiplatform
+io.multiplatform.swift.sdk
 ```
 
 Follows Gradle convention: reverse domain of the GitHub org.

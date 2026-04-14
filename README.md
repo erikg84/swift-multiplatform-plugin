@@ -11,7 +11,7 @@ Swift can target both iOS and Android, but the build tooling requires two separa
 ```kotlin
 // build.gradle.kts
 plugins {
-    id("io.github.erikg84.swift-multiplatform") version "1.0.0"
+    id("io.multiplatform.swift.sdk") version "1.0.0"
 }
 
 swiftMultiplatform {

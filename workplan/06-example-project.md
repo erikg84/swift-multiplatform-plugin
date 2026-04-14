@@ -75,7 +75,7 @@ let package = Package(
 
 ```kotlin
 plugins {
-    id("io.github.erikg84.swift-multiplatform")
+    id("io.multiplatform.swift.sdk")
 }
 
 swiftMultiplatform {
@@ -87,7 +87,7 @@ swiftMultiplatform {
         abis("arm64-v8a", "x86_64")
         minSdk(28)
         jextract(true)
-        namespace("io.github.erikg84.examplesdk")
+        namespace("io.multiplatform.swift.sdk.example")
     }
 
     ios {
